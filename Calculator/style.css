@@ -38,6 +38,7 @@
     border: 0px;
     margin-bottom: 3px;
     background-color: lightgray;
+    cursor: pointer;
 }
 
 .btn:focus {
