@@ -3,9 +3,10 @@ let operator;
 let operatorSet = false;
 let justAttemptedToCalculate = false;
 let justPressedEqualSign = false;
+const display = document.querySelector('.display');
 
 function getDisplayText() {
-    return document.querySelector('.display').innerText;
+    return display.innerText;
 }
 
 function backspace() {
@@ -13,11 +14,11 @@ function backspace() {
     displayText = getDisplayText()
 
     if (!isNaN(displayText) && displayText.length > 1) {
-        document.querySelector('.display').innerText = displayText.substring(0, displayText.length - 1);
+        display.innerText = displayText.substring(0, displayText.length - 1);
     }
 
     if (!isNaN(displayText) && displayText.length === 1) {
-        document.querySelector('.display').innerText = 0;
+        display.innerText = 0;
     }
 }
 
@@ -26,7 +27,7 @@ function resetCalculator() {
     operatorSet = false;
     justAttemptedToCalculate = false;
     justPressedEqualSign = false;
-    document.querySelector('.display').innerText = 0;
+    display.innerText = 0;
 }
 
 function setOperator(buttonText) {
@@ -43,7 +44,7 @@ function setOperator(buttonText) {
     }
 
     operator = buttonText;
-    document.querySelector('.display').innerText = buttonText;
+    display.innerText = buttonText;
     operatorSet = true;
 
 }
@@ -53,16 +54,16 @@ function attemptToCalculate() {
     if (operatorSet && !isNaN(displayText)) {
         switch (operator) {
             case "/":
-                document.querySelector('.display').innerText = firstNumber / parseFloat(displayText);
+                display.innerText = firstNumber / parseFloat(displayText);
                 break;
             case "*":
-                document.querySelector('.display').innerText = firstNumber * parseFloat(displayText);
+                display.innerText = firstNumber * parseFloat(displayText);
                 break;
             case "-":
-                document.querySelector('.display').innerText = firstNumber - parseFloat(displayText);
+                display.innerText = firstNumber - parseFloat(displayText);
                 break;
             case "+":
-                document.querySelector('.display').innerText = firstNumber + parseFloat(displayText);
+                display.innerText = firstNumber + parseFloat(displayText);
                 break;
         }
     }
@@ -74,13 +75,13 @@ function sendNumberToDisplay(num) {
     displayText = getDisplayText()
 
     if (justAttemptedToCalculate || displayText === "0") {
-        document.querySelector('.display').innerText = num;
+        display.innerText = num;
         if (justPressedEqualSign) {
             operatorSet = false;
             justPressedEqualSign = false;
         }
     } else {
-        document.querySelector('.display').innerText += num;
+        display.innerText += num;
     }
 
     justAttemptedToCalculate = false;
