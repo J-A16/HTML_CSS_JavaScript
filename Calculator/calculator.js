@@ -23,8 +23,9 @@ function backspace() {
 
 function resetCalculator() {
     firstNumber = 0;
-    operator;
     operatorSet = false;
+    justAttemptedToCalculate = false;
+    justPressedEqualSign = false;
     document.querySelector('.display').innerText = 0;
 }
 
