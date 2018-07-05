@@ -32,6 +32,7 @@
     align-items: center;
     color: white;
     padding-right: 10px;
+    font-size: 20px;
 }
 
 .btn {
@@ -39,6 +40,7 @@
     margin-bottom: 3px;
     background-color: lightgray;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .btn:focus {
@@ -59,6 +61,7 @@
 
 .operator {
     background-color: orange;
+    color: white;
 }
 
 .operator:hover {
