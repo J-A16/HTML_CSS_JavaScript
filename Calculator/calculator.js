@@ -4,7 +4,7 @@ let operatorSet = false;
 let justAttemptedToCalculate = false;
 let justPressedEqualSign = false;
 
-function getDisplayText(){
+function getDisplayText() {
     return document.querySelector('.display').innerText;
 }
 
@@ -105,7 +105,6 @@ document.querySelector('.calculator').addEventListener('click', function (event)
                 default:
                     setOperator(buttonText);
             }
-
         }
     }
 });
