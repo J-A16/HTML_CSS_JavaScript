@@ -43,10 +43,6 @@
     font-size: 20px;
 }
 
-.btn:focus {
-    outline: none;
-}
-
 .btn-bottom-row {
     margin-bottom: 0px;
 }
