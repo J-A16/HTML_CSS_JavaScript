@@ -4,15 +4,19 @@ let operatorSet = false;
 let justAttemptedToCalculate = false;
 let justPressedEqualSign = false;
 
+function getDisplayText(){
+    return document.querySelector('.display').innerText;
+}
+
 function backspace() {
 
-    str = document.querySelector('.display').innerText;
+    displayText = getDisplayText()
 
-    if (!isNaN(str) && str.length > 1) {
-        document.querySelector('.display').innerText = str.substring(0, str.length - 1);
+    if (!isNaN(displayText) && displayText.length > 1) {
+        document.querySelector('.display').innerText = displayText.substring(0, displayText.length - 1);
     }
 
-    if (!isNaN(str) && str.length === 1) {
+    if (!isNaN(displayText) && displayText.length === 1) {
         document.querySelector('.display').innerText = 0;
     }
 }
@@ -32,7 +36,7 @@ function setOperator(buttonText) {
 
     attemptToCalculate();
 
-    displayText = document.querySelector('.display').innerText;
+    displayText = getDisplayText()
     if (!isNaN(displayText)) {
         firstNumber = parseFloat(displayText);
     }
@@ -44,7 +48,7 @@ function setOperator(buttonText) {
 }
 
 function attemptToCalculate() {
-    displayText = document.querySelector('.display').innerText;
+    displayText = getDisplayText()
     if (operatorSet && !isNaN(displayText)) {
         switch (operator) {
             case "/":
@@ -66,7 +70,7 @@ function attemptToCalculate() {
 }
 
 function sendNumberToDisplay(num) {
-    displayText = document.querySelector('.display').innerText;
+    displayText = getDisplayText()
 
     if (justAttemptedToCalculate || displayText === "0") {
         document.querySelector('.display').innerText = num;
