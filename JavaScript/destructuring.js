@@ -1,0 +1,1 @@
+let {weapon, room} = {"name": "Rusty", "room": "kitchen", "weapon": "candlestick"}
